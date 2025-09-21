@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --color-principal: #222222;
+  --color-secundario: #C680D8;
+  --color-inputs: #696969;
+}
+
+.input-rojo::placeholder {
+  color: red;
+}
+  
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-principal);
+    color: white;
+	font-family: "Inter";
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    height: 100vh
+ }
+
+.HolderLogin, .HolderSignUp{
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 15px #000000;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    gap: 15px;
+}
+
+h3{
+    font-weight: 800;
+    font-size: 28px;
+}
+
+input{
+    font-family: "Inter";
+    font-weight: 200;
+    color: var(--color-inputs);
+    height: 50px;
+    padding-left: 10px;
+    background-color: var(--color-principal);
+    border: 1px solid var(--color-inputs);
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+input[type="password"] {
+  -webkit-appearance: none; /* Chrome/Safari */
+  -moz-appearance: none;    /* Firefox */
+  appearance: none;         /* Estándar */
+}
+
+input[type="password"]::-ms-reveal {
+  display: none;
+}
+ 
+input:focus {
+  outline: none; /* quita el borde de enfoque */
+}
+
+button{
+    cursor: pointer;
+    font-family: "Inter";
+    font-weight: 800;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    height: 50px;
+    background-color: var(--color-secundario);
+    font-size: 24px;
+}
+
+p{
+    font-weight: 800;
+    font-size: 18px;
+}
+
+.HolderOpcion{
+   
+    height: 25px;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.HolderOpcion button{
+    color: var(--color-secundario);
+    background-color: var(--color-principal);
+    font-size: 18px;
+} 
+
+.ErrorHolderEmail, .ErrorHolderContraseña, .ErrorHolderUser{
+    margin-top: -9px;
+    
+    font-weight: 300;
+    display: none;
+    text-align: start;
+    width: 100%;
+    color: red;
+}
