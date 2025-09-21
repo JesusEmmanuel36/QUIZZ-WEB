@@ -13,6 +13,7 @@ const REFRESH_EXPIRES_MS = 20 * 1000; // 7 * 24 * 60 * 60 * 1000
 
 router.post("/", async (req, res) => {
   try {
+    const ip = req.ip
     const db_cuentas =  await client.db("QUIZZWEB");  // base de datos
     const usuarios = await db_cuentas.collection("USUARIOS");  // coleccion de usuarios
 
@@ -57,6 +58,7 @@ router.post("/", async (req, res) => {
         $set: {
           refreshToken: refreshToken,
           refreshExpires: refreshExpires,
+          loginIp: ip,
         },
       }
     );

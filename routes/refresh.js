@@ -8,7 +8,7 @@ const REFRESH_SECRET = "superelcacas27";
 const REFRESH_EXPIRES = 20 * 1000 // 7 * 24 * 60 * 60 * 1000; // 7 días en ms
 
 router.post("/", async (req, res) => {
-  console.log(req.ip)
+  //console.log(req.ip)
   const refreshToken = req.cookies.refreshToken;
   if (!refreshToken) return res.status(401).json({ error: "No hay refresh token" });
 
