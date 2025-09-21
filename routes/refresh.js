@@ -34,7 +34,7 @@ router.post("/", async (req, res) => {
     const ip = req.ip
 
     console.log("IP EN REFRESH: " + ip)
-    console.log("IP GUARDADA EN LOGIN: " + db_usuario.refreshExpires)
+    console.log("IP GUARDADA EN LOGIN: " + db_usuario.loginIp)
 
     
 
