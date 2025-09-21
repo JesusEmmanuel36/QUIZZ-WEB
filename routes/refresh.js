@@ -31,6 +31,13 @@ router.post("/", async (req, res) => {
       return res.status(403).json({ error: "Refresh token expirado" });
     }
 
+    const ip = req.ip
+
+    console.log("IP EN REFRESH: " + ip)
+    console.log("IP GUARDADA EN LOGIN: " + db_usuario.refreshExpires)
+
+    
+
     const newAccessToken = jwt.sign(
       {correo: usuario.correo, user: usuario.user, rol: usuario.rol },
       SECRET,
