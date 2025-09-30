@@ -769,6 +769,15 @@ body {
 
 
 @media (max-width: 530px) {
+    .LoginMainHolder{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+    }
+
     .HolderLogin, .HolderSignUp{
         z-index: 1;
         background-color: var(--color-principal);
@@ -784,5 +793,6 @@ body {
         flex-direction: column;
         align-self: center;
         justify-self: center; 
+        box-shadow: none;
     }
 }
