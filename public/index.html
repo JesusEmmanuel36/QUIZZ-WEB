@@ -3,13 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Página</title>
+  <title>QuizzApp - Inicio</title>
    
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  
+  <div class="HolderNavbar" id="HolderNavbar"></div>
 
-  <h1>Bienvenido, NOMBRE</h1>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  fetch("navbar.html")
+  
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("HolderNavbar").innerHTML = data
+      
+      })})
+  </script>
+  
+  <div class="MainHolder" id="MainHolder">
+    <button class="Añadir" id="Añadir">Añadir</button>
+ 
+  </div>
+
+  <div class="QuizMakerHolder" id="QuizMakerHolder"> 
+    <h1>Crear Quizz</h1>
+    <p><span class="nota">Nota:</span> Deberás seleccionar la respuesta correcta</p>
+    <input id="TituloQuizz" type="text" placeholder="Titulo"> 
+    <button class="AgregarPregunta" id="AgregarPregunta">Agregar Pregunta</button>
+    <div class="QuestionsHolder" id="QuestionsHolder">
+      <button class="AgregarRespuesta" id="AgregarRespuesta">Agregar Respuesta</button>
+
+      <input id="PreguntaQuizz1" type="text" placeholder="Pregunta"> 
+
+      <div class="RespuestaHolder" id="RespuestaHolder1-1">
+        <input id="RespuestaQuizz1-1" type="text" placeholder="Respuesta"> 
+        <button class="SeleccionRespuesta" id="SeleccionRespuesta1-1"></button>
+      </div>
+
+      <div class="RespuestaHolder" id="RespuestaHolder1-2">
+        <input id="RespuestaQuizz1-2" type="text" placeholder="Respuesta"> 
+        <button class="SeleccionRespuesta" id="SeleccionRespuesta1-2"></button>
+      </div>
+    </div>
+
+
+    <button class="CrearQuizz" id="CrearQuizz">Crear</button>
+    <button class="CancelarQuizz" id="CancelarQuizz">Cancelar</button>
+
+     
+  </div>
+  
  
 
   <script src="index.js"></script>

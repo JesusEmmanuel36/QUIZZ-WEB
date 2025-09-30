@@ -1,14 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --color-principal: #222222;
-  --color-secundario: #C680D8;
+  --color-principal: #101010;
+  --color-secundario: #CA33F0;
   --color-inputs: #696969;
 }
 
 .input-rojo::placeholder {
   color: red;
 }
+
+li a{
+    font-size: 18px;
+}
+
+p{
+    font-size: 18px;
+}
+
   
 
 
@@ -19,20 +28,622 @@
 	text-decoration: none;
     scroll-behavior: smooth;
 }
-
+ 
 body {
+     padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+     
     background-color: var(--color-principal);
     color: white;
 	font-family: "Inter";
 	display: flex;
 	flex-direction: column;
     align-items: center;
-    justify-content: center;
+   
     justify-items: center;
-    height: 100vh
+    min-height: 100vh 
+    
+    
  }
 
+ h1{
+    font-size: 18px;
+    font-weight: 500;
+ }
+
+ .gradientsHolder{
+    top: -500px;
+  
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+ }
+
+ .gradientsHolder img{
+     
+     
+    position: absolute;
+    
+    object-fit: cover;
+    width: 50%;
+    height: 900px;
+   
+ }
+
+.gradientsHolder .gradient1{
+    top: 0;
+    left: 0;
+}
+
+.gradientsHolder .gradient2{
+    top: 0;
+    right: 0;
+}
+
+.HolderNavbar{
+    padding-right: 15px;
+    padding-left: 15px;
+     
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    justify-content: center;
+    align-items: center;
+     
+}
+
+.navbar{
+    top: 5px;
+    position: fixed;
+    height: 60px;
+    border-radius: 10px;
+    padding-right: 10px;
+    background: rgba(0, 0, 0, 0.1); /* transparente */
+    backdrop-filter: blur(16px); /* aquí ocurre la magia */
+    -webkit-backdrop-filter: blur(200px); /* compatibilidad con Safari */
+    
+    border: .3px solid #252525; /* grosor del borde */
+   
+  
+    width: calc(100% - 30px);       /* ahora se ajusta entre los márgenes */
+    max-width: 1250px; /* Pero que no crezca más de 1200px */
+    margin-top: 15px;
+ 
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ 
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0px 1px 8px #000000;
+    padding-left: 20px;
+}
+
+.navbar .HolderSecciones{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+ 
+    align-items: center;
+    gap: 20px;
+}
+
+ 
+.navbar ul{
+    list-style-type: none;
+
+}
+
+.navbar li a{
+    font-family: "Inter";
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.navbar .IniciarSesión{
+    cursor: pointer;
+    background-color: var(--color-secundario);
+    color: white;
+    border-radius: 7px;
+    border: none;
+    height: 40px;
+    width: 130px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar .MenuButton{
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 7px;
+    background-color: var(--color-secundario);
+    height: 40px;
+    width: 40px;
+}
+
+.navbar .MenuImg{
+ 
+    justify-items: center;
+ 
+    height: 50%;
+    width: 50%;
+}
+
+.SeccionesCelular{
+    position: fixed;
+    top: 200px;
+    
+   
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding-right: 10px;
+ 
+    background: rgba(0, 0, 0, 0.1); /* transparente */
+    backdrop-filter: blur(16px); /* aquí ocurre la magia */
+    -webkit-backdrop-filter: blur(200px); /* compatibilidad con Safari */
+    
+    border: .3px solid #252525; /* grosor del borde */
+    box-shadow: 0px 1px 18px #000000;
+  
+    top: 80px;
+ 
+    width: calc(100% - 30px);       /* ahora se ajusta entre los márgenes */
+    height: 130px;
+    max-width: 1250px; /* Pero que no crezca más de 1200px */
+    margin-top: 20px;
+    
+ 
+
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    padding-left: 20px;
+    justify-content: center;
+    gap: 12px;
+ 
+    z-index: 1;
+  
+ 
+}
+
+.SeccionesCelular ul{
+  
+    list-style-type: none;
+
+}
+
+.SeccionesCelular li a{
+    font-family: "Inter";
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    
+}
+
+.SeccionesCelular .IniciarSesión{
+    cursor: pointer;
+    background-color: rgb(0,0 ,0, 0.0);
+    color: white;
+    border-radius: 7px;
+    border: none;
+    height: 100%;
+    width: 100%;
+    font-size: 18px;
+ 
+    font-family: "Inter";
+}
+
+.MainHolder .Añadir{
+ 
+    border-radius: 10px;
+    border: none;
+    background: rgba(0, 0, 0, 0.1); /* transparente */
+    backdrop-filter: blur(200px); /* aquí ocurre la magia */
+    -webkit-backdrop-filter: blur(200px); /* compatibilidad con Safari */
+    display: none;
+    border: 1.5px solid var(--color-secundario); /* grosor del borde */ 
+    box-shadow: 0px 1px 8px var(--color-secundario);
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+
+.MainHolder{
+     
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    max-width: 1250px;
+    margin-top: 100px;
+
+    display: grid;
+    flex-direction: row;
+    gap: 20px;
+
+    flex-wrap: wrap;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 130px
+}
+
+.MainHolder .QuizzHolder{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    gap: 10px;
+     
+    height: 130px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1); /* transparente */
+    backdrop-filter: blur(200px); /* aquí ocurre la magia */
+    -webkit-backdrop-filter: blur(200px); /* compatibilidad con Safari */
+    
+    border: .3px solid #252525; /* grosor del borde */
+    box-shadow: 0px 1px 8px #000000;
+}
+
+.MainHolder .QuizzHolder h1{
+    width: 100%;
+    text-align: center;
+    font-family: "Inter";
+    font-weight: 750;
+}
+
+.MainHolder p{
+    width: 100%;
+    text-align: center;
+}
+
+
+.MainHolder .QuizzHolder button{
+    background-color: var(--color-secundario);
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    height: 30px;
+    font-family: "Inter";
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.QuizMakerHolder{ 
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centra en ambos ejes */
+    width: calc(100% - 30px);
+    height: auto;
+    max-height: 550px;
+     
+    max-width: 550px;
+    flex-shrink: 0; /* evita que los hijos se achiquen */
+    overflow-y: auto;
+              /* para Firefox */
+    scrollbar-color: var(--color-inputs) var(--color-principal);
+    scrollbar-width: thin;
+    position: fixed;
+    display: none;
+    flex: 0 0 auto;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--color-principal);
+    border-radius: 10px;
+    box-shadow: 0px 1px 21418px #000000;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    gap: 10px;
+}
+
+/* estilo para el contenedor */
+.QuizMakerHolder {
+  overflow-y: auto;                 /* scroll cuando haga falta */
+  -webkit-overflow-scrolling: touch; /* smooth en iOS */
+  scrollbar-width: thin;            /* Firefox: ancho */
+  scrollbar-color: #252525 #101010; /* Firefox: thumb track */
+}
+
+.QuizMakerHolder h1{
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: -10px;
+}
+
+.QuizMakerHolder .nota{
+    font-weight: 800;
+    color: var(--color-secundario);
+}
+
+.QuizMakerHolder input{
+    width: 100%;
+    font-family: "Inter";
+    font-weight: 200;
+    color: var(--color-inputs);
+    height: 35px;
+    padding-left: 10px;
+    background-color: var(--color-principal);
+    border: 1px solid var(--color-inputs);
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.QuizMakerHolder input:focus {
+  outline: none; /* quita el borde de enfoque */
+}
+
+.QuizMakerHolder .AgregarPregunta, .QuizMakerHolder button{
+    border: none;
+    background-color: var(--color-secundario);
+    height: 35px;
+    color: white;
+    border-radius: 5px;
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+
+.QuizMakerHolder .AgregarRespuesta{
+    border: none;
+    background-color: #252525;
+    height: 35px;
+    color: white;
+    border-radius: 5px;
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 550;
+    cursor: pointer;
+}
+
+.QuizMakerHolder .QuestionsHolder{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    height: auto;
+    box-shadow: inset 0px 1px 18px #000000;
+}
+
+.QuizMakerHolder .QuestionsHolder .RespuestaHolder{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+ 
+    width: 100%;
+}
+
+.QuizMakerHolder .QuestionsHolder .RespuestaHolder input{
+    width: 95%;
+}
+
+.QuizMakerHolder .QuestionsHolder .RespuestaHolder button{
+    width: 35px;
+    height: 35px;
+   
+    border: 1px solid var(--color-inputs);
+    background-color: var(--color-principal);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.QuizzHolderDiv{
+    z-index: 0;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1); /* transparente */
+    backdrop-filter: blur(16px); /* aquí ocurre la magia */
+    -webkit-backdrop-filter: blur(16px); /* compatibilidad con Safari */
+    box-shadow: 0px 1px 8px #000000;
+    border: .3px solid #252525; /* grosor del borde */
+    margin-top: 100px;
+    width: 100%;
+    max-width: 1250px;
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.QuizzHolderDiv .QuizzTituloH1{
+    font-weight: 750;
+    margin-bottom: -10px;
+}
+
+.QuizzHolderDiv .H1PreguntaQuizz{
+    font-weight: 600 ;
+}
+
+.QuizzHolderDiv .GuardarQuizz{
+    background-color: var(--color-secundario);
+    width: 100%;
+    height: 50px;
+    font-family: "Inter";
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.QuizzHolderDiv .PreguntasQuizzHolder{
+  
+    height: 100vh;
+    max-height: 500px;
+    overflow-y: auto;
+    scrollbar-color: var(--color-inputs) var(--color-principal);
+    scrollbar-width: thin;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: start;
+  
+}
+
+.QuizzHolderDiv .PreguntaQuizzHolder{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: start;
+   
+    height: auto;
+}
+
+.QuizzHolderDiv .BotonRespuestaQuizz{
+    
+     
+    padding: 6px;
+    background: rgba(0, 0, 0, 0.0); /* transparente */
+    border: .3px solid #252525; /* grosor del borde */
+    box-shadow: 0px 1px 8px #000000;
+    border-radius: 5px;
+     
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.QuizzHolderDiv .BotonRespuestaQuizz .BotonRespuestaQuizzTexto{
+    color: white;
+    font-family: "Inter";
+}
+
+.QuizzHolderDiv .SelectorRespuestaCorrectaDiv{
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.3); /* transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+}
+ 
+.QuizzHolderDiv .SelectorRespuestaCorrectaDiv img{
+    display: none;
+    width: 18px;
+    height: 18px;
+}
+
+.HolderResultadosUsuario{
+    max-width: 1250px; 
+    min-height: 85vh;
+    height: auto;
+
+    background: rgba(0, 0, 0, 0.1); /* transparente */
+    backdrop-filter: blur(16px); /* aquí ocurre la magia */
+    -webkit-backdrop-filter: blur(16px); /* compatibilidad con Safari */
+    box-shadow: 0px 1px 8px #000000;
+    border: .3px solid #252525; /* grosor del borde */
+
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 100px;
+    z-index: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.HolderResultadosAdmin{
+    max-width: 1250px; 
+    min-height: 85vh;
+    height: auto;
+
+    background: rgba(0, 0, 0, 0.1); /* transparente */
+    backdrop-filter: blur(16px); /* aquí ocurre la magia */
+    -webkit-backdrop-filter: blur(16px); /* compatibilidad con Safari */
+    box-shadow: 0px 1px 8px #000000;
+    border: .3px solid #252525; /* grosor del borde */
+
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 100px;
+    z-index: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.HolderResultadosUsuario h1, .HolderResultadosAdmin h1{   
+    font-size: 18px;
+    font-weight: 750;   
+    margin: 0;
+    padding: 0; 
+}
+
+.HolderResultadosUsuario .ResultadosH1, .HolderResultadosAdmin .ResultadosH1{
+    margin-bottom: -10px;
+}
+ 
+.HolderResultadosUsuario .HolderResultadosQuizzes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: start;
+}
+
+.HolderResultadosAdmin .HolderResultadosQuizzes{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: start;
+}
+ 
+
+.HolderResultadosUsuario .ResultadoDeQuizzHolder, .HolderResultadosAdmin .ResultadoDeQuizzHolderAdmin{
+    
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.0); 
+    border: 1px solid #252525; /* grosor del borde */
+        box-shadow: 0px 1px 5px #000000; 
+    padding: 20px;
+}
+
+.LoginMainHolder{
+    position: absolute; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+ 
 .HolderLogin, .HolderSignUp{
+    z-index: 1;
+    background-color: var(--color-principal);
     border-radius: 10px;
     text-align: center;
     box-shadow: 0px 4px 15px #000000;
@@ -48,12 +659,12 @@ body {
     gap: 15px;
 }
 
-h3{
+.LoginMainHolder h3{
     font-weight: 800;
     font-size: 28px;
 }
 
-input{
+.LoginMainHolder input{
     font-family: "Inter";
     font-weight: 200;
     color: var(--color-inputs);
@@ -65,21 +676,21 @@ input{
     border-radius: 5px;
 }
 
-input[type="password"] {
+.LoginMainHolder input[type="password"] {
   -webkit-appearance: none; /* Chrome/Safari */
   -moz-appearance: none;    /* Firefox */
   appearance: none;         /* Estándar */
 }
 
-input[type="password"]::-ms-reveal {
+.LoginMainHolder input[type="password"]::-ms-reveal {
   display: none;
 }
  
-input:focus {
+.LoginMainHolder input:focus {
   outline: none; /* quita el borde de enfoque */
 }
 
-button{
+.LoginMainHolder button{
     cursor: pointer;
     font-family: "Inter";
     font-weight: 800;
@@ -91,7 +702,7 @@ button{
     font-size: 24px;
 }
 
-p{
+.LoginMainHolder p{
     font-weight: 800;
     font-size: 18px;
 }
@@ -116,10 +727,42 @@ p{
 
 .ErrorHolderEmail, .ErrorHolderContraseña, .ErrorHolderUser{
     margin-top: -9px;
-    
-    font-weight: 300;
+    font-family: "Inter";
+    font-weight: 300 !important;
     display: none;
     text-align: start;
     width: 100%;
     color: red;
+}
+
+.QuizMakerHolder > * {
+  flex: 0 0 auto;   /* ningún hijo crece ni se aplasta */
+}
+
+@media (max-width: 530px) {
+    .navbar ul li a{
+        display: none;
+    }
+
+    .navbar .IniciarSesión{
+        display: none;
+    }
+
+    .navbar .MenuButton{
+        /* background-color: rgb(0, 0, 0, .0); */
+        border-radius: 5px;
+        display: flex;
+    }
+
+    .QuizzHolderDiv .PreguntasQuizzHolder{
+        height: 100vh;
+        max-height: 400px;
+        overflow-y: auto;
+        scrollbar-color: var(--color-inputs) var(--color-principal);
+        scrollbar-width: thin;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: start;
+    }
 }

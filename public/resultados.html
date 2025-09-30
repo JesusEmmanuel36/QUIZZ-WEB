@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizzApp - Resultados</title>
+   
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="HolderNavbar" id="HolderNavbar"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  fetch("navbar.html")
+  
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("HolderNavbar").innerHTML = data
+      
+      })})
+  </script>
+
+  <div class="HolderResultadosUsuario", id="HolderResultadosUsuario">
+    <h1 class="ResultadosH1" id="ResultadosH1">Resultados</h1>
+    <p>Aqui se muestran tus resultados obtenidos.</p>
+
+    <div class="HolderResultadosQuizzes" id="HolderResultadosQuizzes">
+
+        <!--
+        
+         
+         
+         
+        <div class="ResultadoDeQuizzHolder">
+            <h1 class="ResultadoQuizzH1" id="ResultadoQuizzH1">Titulo Quizz</h1>
+            <p class="ResultadoQuizzP" id="ResultadoQuizzP">Resultado: 67</p>
+            <p class="FechaQuizzP" id="FechaQuizzP">Fecha: Hace 2 minutos</p>
+        </div>
+
+        -->
+     
+  
+    </div>
+  </div>
+
+  <div class="HolderResultadosAdmin", id="HolderResultadosAdmin">
+    <h1 class="ResultadosH1" id="ResultadosH1">Resultados</h1>
+    <p>Aqui se muestran todos los resultados.</p>
+
+    <!--
+    <div class="HolderResultadosQuizzes" id="HolderResultadosQuizzes">
+        <h1 class="QuizzH1Admin">Quizz Ingles</h1>
+        <div class="ResultadoDeQuizzHolderAdmin">
+            <h1 class="EmailQuizzH1" id="EmailQuizzH1">Email</h1>
+            <p class="EmailQuizzP" id="EmailQuizzP">hola@gmail.com</p>
+            <h1 class="ResultadoQuizzH1" id="ResultadoQuizzH1">Resultado</h1>
+            <p class="ResultadoQuizzP" id="ResultadoQuizzP">83</p>
+            <h1 class="FechaQuizzH1" id="FechaQuizzH1">Fecha</h1>
+            <p class="FechaQuizzP" id="FechaQuizzP">Hace 2 minutos</p>
+        </div>
+    </div>
+    -->
+ 
+
+             
+  </div>
+
+
+   
+ 
+
+  <script src="resultados.js"></script>
+</body>
+</html>

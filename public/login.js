@@ -10,8 +10,6 @@ const acceder = document.getElementById("CrearCuenta")
 acceder.addEventListener("click", () => {
     window.location.href = "/signup"
 })
- 
-
 
 entrar.addEventListener("click", async () => {
     const emailTextBox = email.value
@@ -77,8 +75,6 @@ entrar.addEventListener("click", async () => {
             password.style.color = "red";
             password.classList.add("input-rojo");
         }
-
-        console.log(data.error);
     }else{
         email.style.border = "1px solid #696969";
         email.style.color = "#696969";
@@ -89,8 +85,6 @@ entrar.addEventListener("click", async () => {
         password.style.color = "#696969";
         password.classList.remove("input-rojo");
         errorHolderContraseña.style.display = "none";
-
-        console.log(response.status)
 
         setTimeout(() => {
             window.location.href = "/"

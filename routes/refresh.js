@@ -5,10 +5,12 @@ const jwt = require("jsonwebtoken");
 
 const SECRET = "elcacas27";
 const REFRESH_SECRET = "superelcacas27";
-const REFRESH_EXPIRES = 20 * 1000 // 7 * 24 * 60 * 60 * 1000; // 7 días en ms
+const ACCESS_EXPIRES = "15m";  // access token dura 15 minutos
+const REFRESH_EXPIRES = "7d";  // refresh dura 7 días 7d
+const REFRESH_EXPIRES_MS = 7 * 24 * 60 * 60 * 1000;
+const ACCESS_EXPIRES_MS = 15 * 60 * 1000
 
 router.post("/", async (req, res) => {
-  //console.log(req.ip)
   const refreshToken = req.cookies.refreshToken;
   if (!refreshToken) return res.status(401).json({ error: "No hay refresh token" });
 
@@ -30,24 +32,20 @@ router.post("/", async (req, res) => {
       console.log("Refresh token expirado")
       return res.status(403).json({ error: "Refresh token expirado" });
     }
-
-    const ip = req.ip
-
-    console.log("IP EN REFRESH: " + ip)
-    console.log("IP GUARDADA EN LOGIN: " + db_usuario.loginIp)
+ 
 
     
 
     const newAccessToken = jwt.sign(
       {correo: usuario.correo, user: usuario.user, rol: usuario.rol },
       SECRET,
-      { expiresIn: "10s" }
+      { expiresIn: ACCESS_EXPIRES }
     );
 
     const newRefreshToken = jwt.sign(
       { correo: usuario.correo, user: usuario.user, rol: usuario.rol },
       REFRESH_SECRET,
-      { expiresIn: "20s" }
+      { expiresIn: REFRESH_EXPIRES }
     );
 
     await usuarios.updateOne(
@@ -63,14 +61,14 @@ router.post("/", async (req, res) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
-      maxAge: 10 * 1000 // 10 segundos en milisegundos
+      maxAge: ACCESS_EXPIRES_MS // 15 minutos en milisegundos
     });
     
     res.cookie("refreshToken", newRefreshToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
-      maxAge: REFRESH_EXPIRES
+      maxAge: REFRESH_EXPIRES_MS
     });
 
 

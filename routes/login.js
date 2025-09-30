@@ -7,13 +7,13 @@ const jwt = require("jsonwebtoken");
 
 const SECRET = "elcacas27"; // secreto del token
 const REFRESH_SECRET = "superelcacas27"; // secreto del regenerador
-const ACCESS_EXPIRES = "10s";  // access token dura 15 minutos
-const REFRESH_EXPIRES = "20s";  // refresh dura 7 días 7d
-const REFRESH_EXPIRES_MS = 20 * 1000; // 7 * 24 * 60 * 60 * 1000
+const ACCESS_EXPIRES = "15m";  // access token dura 15 minutos
+const REFRESH_EXPIRES = "7d";  // refresh dura 7 días 7d
+const REFRESH_EXPIRES_MS = 7 * 24 * 60 * 60 * 1000;
+const ACCESS_EXPIRES_MS = 15 * 60 * 1000
 
 router.post("/", async (req, res) => {
-  try {
-    const ip = req.ip
+  try { 
     const db_cuentas =  await client.db("QUIZZWEB");  // base de datos
     const usuarios = await db_cuentas.collection("USUARIOS");  // coleccion de usuarios
 
@@ -42,7 +42,7 @@ router.post("/", async (req, res) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
-      maxAge: 10 * 1000 // 10 segundos en milisegundos
+      maxAge: ACCESS_EXPIRES_MS // 15 minutos en milisegundos
     });
 
     res.cookie("refreshToken", refreshToken, {
@@ -58,7 +58,6 @@ router.post("/", async (req, res) => {
         $set: {
           refreshToken: refreshToken,
           refreshExpires: refreshExpires,
-          loginIp: ip,
         },
       }
     );

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuizzApp - Quizz</title>
+   
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="HolderNavbar" id="HolderNavbar"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+  fetch("navbar.html")
+  
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("HolderNavbar").innerHTML = data
+      
+      })})
+  </script>
+   
+  <div class="QuizzHolderDiv" id="QuizzHolderDiv">
+    <h1 class="QuizzTituloH1" id="QuizzTituloH1">Quizz Titulo</h1>
+    <p class="QuizzNotaP" id="QuizzNotaP">Selecciona las respuestas correctas.</p>
+    <div class="PreguntasQuizzHolder" id="PreguntasQuizzHolder">
+        
+    <!--    
+        <div class="PreguntaQuizzHolder" id="PreguntaQuizzHolder">
+            <h1 class="H1PreguntaQuizz" id="H1PreguntaQuizz">1. Pregunta</h1>
+            <button class="BotonRespuestaQuizz" id="BotonRespuestaQuizz">
+                <div class="SelectorRespuestaCorrectaDiv" id="SelectorRespuestaCorrectaDiv">
+                    <img src="imagenes/checkmark-128 2 (2).png" alt="">
+                </div>
+                <p class="BotonRespuestaQuizzTexto" id="BotonRespuestaQuizzTexto">Respuesta</p>
+            </button>
+            
+        </div>
+
+    -->
+    
+
+  
+    </div>
+
+    <button class="GuardarQuizz" id="GuardarQuizz">Guardar</button>
+ 
+
+  </div>
+
+  <script src="quizzes.js"></script>
+</body>
+</html>
